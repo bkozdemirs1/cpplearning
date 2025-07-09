@@ -1,5 +1,6 @@
 # C++ Learning 📚
-This repository contains basic to intermediate C++ programs that I studied in my first year of computer engineering.
+*BEGINNING IS EVERYTHING!*
+Hi guys! This repository contains basic to intermediate C++ programs that I studied in my first year of computer engineering.
 
 ## Topics
 - Variables
