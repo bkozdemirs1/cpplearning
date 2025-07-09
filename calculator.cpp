@@ -1,38 +1,56 @@
 #include <iostream>
 using namespace std;
-int main(){
 
-int selection;
-float num1,num2;
-float result;
+int main() {
+    int selection;
+    float num1, num2, result;
 
-cout<<"For '+' press 1"<<endl<<"For '-' press 2"<<endl<<"For '*' press 3"<<endl<<"For '/' press 4"<<endl;
-cin>>selection;
+    cout << "Simple Calculator using switch-case in C++" << endl;
+    cout << "------------------------------------------" << endl;
+    cout << "1 - Addition (+)" << endl;
+    cout << "2 - Subtraction (-)" << endl;
+    cout << "3 - Multiplication (*)" << endl;
+    cout << "4 - Division (/)" << endl;
+    cout << "Please select an operation (1-4): ";
+    cin >> selection;
 
-switch(selection){
-    
-    case 1: cout<<"Addition selected as successfully, now please enter 2 values! ";
-    cin>>num1>>num2;
-    result=(num1+num2);
-    cout<<result<<endl; break;
+    switch (selection) {
+        case 1:
+            cout << "Addition selected. Please enter two numbers: ";
+            cin >> num1 >> num2;
+            result = num1 + num2;
+            cout << "Result: " << result << endl;
+            break;
 
-    case 2: cout<<"Subtraction selected as successfully, now please enter 2 values! ";
-    cin>>num1>>num2;
-    result=(num1-num2);
-    cout<<result<<endl; break;
+        case 2:
+            cout << "Subtraction selected. Please enter two numbers: ";
+            cin >> num1 >> num2;
+            result = num1 - num2;
+            cout << "Result: " << result << endl;
+            break;
 
-    case 3: cout<<"Multiplication selected as successfully, now please enter 2 values! ";
-    cin>>num1>>num2;
-    result=(num1*num2);
-    cout<<result<<endl; break;   
-    
-    case 4: cout<<"Divition selected as successfully, now please enter 2 values! ";
-    cin>>num1>>num2;
-    result=(num1/num2);
-    cout<<result<<endl; break;  
-    
-    default: cout<<"Please make your choice between number 1 and 4! ";
+        case 3:
+            cout << "Multiplication selected. Please enter two numbers: ";
+            cin >> num1 >> num2;
+            result = num1 * num2;
+            cout << "Result: " << result << endl;
+            break;
+
+        case 4:
+            cout << "Division selected. Please enter two numbers: ";
+            cin >> num1 >> num2;
+
+            if (num2 != 0) {
+                result = num1 / num2;
+                cout << "Result: " << result << endl;
+            } else {
+                cout << "Error: Division by zero is not allowed!" << endl;
+            }
+            break;
+
+        default:
+            cout << "Invalid selection! Please choose between 1 and 4." << endl;
     }
-    
+
     return 0;
-    }
+}
