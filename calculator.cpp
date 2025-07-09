@@ -16,28 +16,28 @@ int main() {
 
     switch (selection) {
         case 1:
-            cout << "Addition selected. Please enter two numbers: ";
+            cout << "Addition selected successfully. Please enter two numbers: ";
             cin >> num1 >> num2;
             result = num1 + num2;
             cout << "Result: " << result << endl;
             break;
 
         case 2:
-            cout << "Subtraction selected. Please enter two numbers: ";
+            cout << "Subtraction selected successfully. Please enter two numbers: ";
             cin >> num1 >> num2;
             result = num1 - num2;
             cout << "Result: " << result << endl;
             break;
 
         case 3:
-            cout << "Multiplication selected. Please enter two numbers: ";
+            cout << "Multiplication selected successfully. Please enter two numbers: ";
             cin >> num1 >> num2;
             result = num1 * num2;
             cout << "Result: " << result << endl;
             break;
 
         case 4:
-            cout << "Division selected. Please enter two numbers: ";
+            cout << "Division selected successfully. Please enter two numbers: ";
             cin >> num1 >> num2;
 
             if (num2 != 0) {
