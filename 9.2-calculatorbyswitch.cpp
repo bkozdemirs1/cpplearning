@@ -48,6 +48,7 @@ int main() {
 
         default:
             cout << "Invalid selection! Please choose between 1 and 4." << endl;
+            break;
     }
 
     return 0;
