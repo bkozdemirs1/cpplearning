@@ -4,9 +4,7 @@ using namespace std;
 int main() {
     int selection;
     float num1, num2, result;
-
-    cout << "Simple Calculator using switch-case in C++" << endl;
-    cout << "------------------------------------------" << endl;
+    
     cout << "1 - Addition (+)" << endl;
     cout << "2 - Subtraction (-)" << endl;
     cout << "3 - Multiplication (*)" << endl;
