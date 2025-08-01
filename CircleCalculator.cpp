@@ -6,7 +6,7 @@ int main(){
   int pi=3;
    int r;
    int result;
-cout<<"To calculate area enter 1!";
+cout<<"To calculate area enter 1!"<<endl;
 cout<<"To calculate perimeter enter 2!"<<endl;
 cin>>number;
 switch(number){
