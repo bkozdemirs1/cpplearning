@@ -22,14 +22,14 @@ int main() {
     cout << "How many " << productname2 << " would you like to buy? ";
     cin >> quantity2;
 
-    float total1 = quantity1 * price1;
-    float total2 = quantity2 * price2;
+    float total1 = quantity1 * (price1*20/100); // I will assume tax as %20 of per product!
+    float total2 = quantity2 * (price2*20/100);
     float sum = total1 + total2;
 
     cout << "\n----------- RECEIPT -----------" << endl;
     cout << fixed << setprecision(2);
-    cout << productname1 << " x" << quantity1 << "   " << total1 << " TL" << endl;
-    cout << productname2 << " x" << quantity2 << "   " << total2 << " TL" << endl;
+    cout << productname1 << " x" << quantity1 << "   " << total1 << " TL (with tax)" << endl;
+    cout << productname2 << " x" << quantity2 << "   " << total2 << " TL (with tax)" << endl;
     cout << "------------------------------" << endl;
     cout << "TOTAL:         " << sum << " TL" << endl;
 
