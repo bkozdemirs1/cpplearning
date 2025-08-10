@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 int main(){
@@ -35,6 +34,12 @@ int main(){
     
        cout<<"Obese"<<endl;
    }
+   
+   else{
+       
+       cout<<"Please enter a valid value!";
+   }
+   
     
     return 0;
 }
