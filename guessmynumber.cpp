@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ctime>
+#include <ctime> // you can use time.h instead of ctime too
 using namespace std;
 
 int main() {
@@ -7,7 +7,7 @@ int main() {
 
     int number, guess, guesscount = 0;
 
-    number = rand() % 100 + 1; // 1 ile 100 arasında sayı
+    number = rand() % 100 + 1; 
 
     cout << "Guess the number between 1 and 100!" << endl;
 
@@ -18,7 +18,7 @@ int main() {
 
         if (guess == number) {
             cout << "Correct! You found the number " << number << " in " << guesscount << " tries." << endl;
-            break; // Doğru tahminde döngüyü kır
+            break; 
         }
         else if (guess < number) {
             cout << "Too low, try again." << endl;
