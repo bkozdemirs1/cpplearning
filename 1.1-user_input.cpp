@@ -1,5 +1,6 @@
 // Takes name and age as input and prints them
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
