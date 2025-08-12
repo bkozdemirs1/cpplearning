@@ -29,7 +29,7 @@ int main() {
     cout << "\n------- Number Details -------\n";
 
     for (i = 0; i < number; i++) {
-        // Max / Min kontrolü
+       
         if (array[i] > maxVal) maxVal = array[i];
         if (array[i] < minVal) minVal = array[i];
 
