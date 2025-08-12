@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+#include <cmath> //or you can use math.h instead too! :D
 
 using namespace std;
 
