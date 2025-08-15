@@ -19,6 +19,7 @@ int main() {
     double R = pow(v0, 2) * sin(2*angle_rad) / gravity;
 
     cout<<fixed<<setprecision(2);
+    
     cout << "Max height: " << H << " m\n";
     cout << "Flight time: " << T << " s\n";
     cout << "Range: " << R << " m\n";
