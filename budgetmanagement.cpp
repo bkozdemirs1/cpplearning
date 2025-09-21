@@ -51,8 +51,6 @@ int main()
      cout<<"You've spent total"<<" "<<result<<" "<<"TRY !"<<endl;
    
      cout<<"A total of"<<" "<< (balance-result)<<" "<<"TRY remained!"<<endl;  
-   
-       
    }
    
    else
@@ -67,10 +65,5 @@ int main()
    cout<<"Your balance: "<<" "<<balance<<endl;
     
    return 0;
-
    }
-   
-   }
-    
-    
-    
+}
