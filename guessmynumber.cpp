@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ctime> // you can use time.h instead of ctime too!!! :D
+#include <ctime> // you can use time.h instead of ctime too!
 using namespace std;
 
 int main() {
