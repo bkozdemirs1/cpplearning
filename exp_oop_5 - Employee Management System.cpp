@@ -158,7 +158,6 @@ public:
 		}
 
 		cout<<"Employee not found!";
-
 	}
 
 	void applyPerformanceScore(int id) {
@@ -223,6 +222,22 @@ public:
 			}
 
 			cout<<"New e-mail has been updated!"<<" "<<employees[i].getPosition();
+			return;
+
+		}
+		cout<<"Employee not found!";
+	}
+
+	void updatePerformanceScore(int id,double newscore) {
+
+		for(int i = 0; i<employees.size(); i++) {
+
+			if(employees[i].getEmployeeId() == id) {
+
+				employees[i].setPerformanceScore(newscore);
+			}
+
+			cout<<"New Performance Score has been updated!"<<" "<<employees[i].getPerformanceScore();
 			return;
 
 		}
@@ -302,7 +317,7 @@ public:
 
 			cout<<"No employee(s) found. Add a employee first!";
 		}
-		
+
 		else {
 			for(int i = 0; i<employees.size(); i++) {
 
@@ -349,7 +364,10 @@ int main() {
 		cout << "7 -> Update Employee's E-Mail\n";
 		cout << "8 -> Update Employee's Phone Number\n";
 		cout << "9 -> Update Employee's Position\n";
-		cout << "10 -> Show All Employees\n";
+		cout << "10 -> Update Employee's Performance Score\n";
+		cout << "11 -> Give Raise to Salary\n";
+		cout << "12 -> Give Deduct to Salary\n";
+		cout << "13 -> Show All Employees\n";
 		cout << "0 -> Exit\n";
 		cout << "===============================================\n";
 		cout << "Your choice: ";
@@ -382,8 +400,8 @@ int main() {
 			string pos;
 			cin>>pos;
 
-			empid = rand()%(9999)+1;
-			depid = rand()%(9999)+1;
+			empid = rand()%(999999)+1;
+			depid = rand()%(999999)+1;
 
 			cout<<"Employee Created!";
 			cout<<"\nID: "<<empid<<"\nName: "<<name<<"\nLast Name: "<<lastname<<"\nE-Mail: "<<mail<<"\nPhone Number: "<<num<<"\nPosition: "<<pos<<"\nDepartment ID: "<<depid;
@@ -431,28 +449,28 @@ int main() {
 		}
 
 		case 5: {
-		    
-		    cout<<"Enter Employee's ID: ";
+
+			cout<<"Enter Employee's ID: ";
 			int id;
 			cin>>id;
-			
+
 			cout<<"Enter Employee's Score: ";
 			double score;
 			cin>>score;
-			
+
 			e.addPerformanceScore(id,score);
-			
+
 			break;
 		}
 
 		case 6: {
-			
+
 			cout<<"Enter Employee's ID: ";
 			int id;
 			cin>>id;
-			
+
 			e.applyPerformanceScore(id);
-			
+
 			break;
 		}
 
@@ -503,6 +521,51 @@ int main() {
 
 		case 10: {
 
+			cout<<"Enter Employee's ID: ";
+			int id;
+			cin>>id;
+
+			cout<<"Enter Employee's new Performance score: ";
+			double score;
+			cin>>score;
+
+			e.updatePerformanceScore(id,score);
+
+			break;
+		}
+
+		case 11: {
+
+			cout<<"Enter Employee's ID: ";
+			int id;
+			cin>>id;
+
+			cout<<"Enter amount of Raise: ";
+			double amount;
+			cin>>amount;
+
+			e.giveRaise(id,amount);
+
+			break;
+		}
+
+		case 12: {
+
+			cout<<"Enter Employee's ID: ";
+			int id;
+			cin>>id;
+
+			cout<<"Enter amount of Deduct: ";
+			double amount;
+			cin>>amount;
+
+			e.giveDeduct(id,amount);
+
+			break;
+		}
+
+		case 13: {
+
 			e.showEmployees();
 
 			break;
@@ -510,10 +573,12 @@ int main() {
 
 		case 0:
 			cout << "Exiting the system... Goodbye!\n";
+
 			return 0;
 
 		default:
-			cout << "Invalid choice! Please select between 0-10.\n";
+			cout << "Invalid choice! Please select between 0-13.\n";
+			break;
 		}
 	}
 
