@@ -311,6 +311,46 @@ public:
 		cout<<"Employee not found!";
 	}
 
+	void searchEmployeebyName(string name,string lastname) {
+
+
+		if(employees.size() == 0) {
+			cout<<"Employee not found!";
+		}
+		else {
+
+			for(int i = 0; i<employees.size(); i++) {
+
+				if(employees[i].getName() == name && employees[i].getLastName() == lastname) {
+
+					cout<<"ID: "<<employees[i].getEmployeeId();
+					cout<<"\nName: "<<employees[i].getName();
+					cout<<"\nLast Name: "<<employees[i].getLastName();
+					cout<<"\nDepartment: "<<employees[i].getDepartmentId();
+					cout<<"\nSalary: "<<employees[i].getSalary();
+					cout<<"\nPosition: "<<employees[i].getPosition();
+					cout<<"\nPhone Number: "<<employees[i].getPhoneNumber();
+					cout<<"\nE-Mail: "<<employees[i].getEmail();
+					cout<<"\nPerformance Score: "<<employees[i].getPerformanceScore();
+				}
+
+				return;
+			}
+		}
+	}
+
+	void removeEmployeebyName(string name,string lastname) {
+
+		for(int i = 0; i<employees.size(); i++) {
+			if(employees[i].getName() == name && employees[i].getLastName() == lastname) {
+				employees.erase(employees.begin() + i);
+				cout<<"Employee removed!\n";
+				return;
+			}
+		}
+		cout<<"Employee not found!";
+	}
+
 	void showEmployees() {
 
 		if(employees.size() == 0) {
@@ -359,15 +399,17 @@ int main() {
 		cout << "2 -> Add Salary\n";
 		cout << "3 -> Search Employee by ID\n";
 		cout << "4 -> Remove Employee by ID\n";
-		cout << "5 -> Add Performance Score\n";
-		cout << "6 -> Increase Salary by Performance\n";
-		cout << "7 -> Update Employee's E-Mail\n";
-		cout << "8 -> Update Employee's Phone Number\n";
-		cout << "9 -> Update Employee's Position\n";
-		cout << "10 -> Update Employee's Performance Score\n";
-		cout << "11 -> Give Raise to Salary\n";
-		cout << "12 -> Give Deduct to Salary\n";
-		cout << "13 -> Show All Employees\n";
+		cout << "5 -> Search Employee by Name & Lastname\n";
+		cout << "6 -> Remove Employee by Name & Lastname\n";
+		cout << "7 -> Add Performance Score\n";
+		cout << "8 -> Increase Salary by Performance\n";
+		cout << "9 -> Update Employee's E-Mail\n";
+		cout << "10 -> Update Employee's Phone Number\n";
+		cout << "11 -> Update Employee's Position\n";
+		cout << "12 -> Update Employee's Performance Score\n";
+		cout << "13 -> Give Raise to Salary\n";
+		cout << "14 -> Give Deduct to Salary\n";
+		cout << "15 -> Show All Employees\n";
 		cout << "0 -> Exit\n";
 		cout << "===============================================\n";
 		cout << "Your choice: ";
@@ -447,8 +489,38 @@ int main() {
 
 			break;
 		}
-
+		
 		case 5: {
+		    
+		    cout<<"Enter Employee Name: ";
+		    string name;
+		    cin>>name;
+		    
+		    cout<<"Enter Employee Lastname: ";
+		    string lastname;
+		    cin>>lastname;
+		    
+		    e.searchEmployeebyName(name,lastname);
+		    
+		    break;
+		}
+		
+		case 6: {
+		    
+		    cout<<"Enter Employee Name: ";
+		    string name;
+		    cin>>name;
+		    
+		    cout<<"Enter Employee Lastname: ";
+		    string lastname;
+		    cin>>lastname;
+		    
+		    e.removeEmployeebyName(name,lastname);
+		    
+		    break;
+		}
+
+		case 7: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -463,7 +535,7 @@ int main() {
 			break;
 		}
 
-		case 6: {
+		case 8: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -474,7 +546,7 @@ int main() {
 			break;
 		}
 
-		case 7: {
+		case 9: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -489,7 +561,7 @@ int main() {
 			break;
 		}
 
-		case 8: {
+		case 10: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -504,7 +576,7 @@ int main() {
 			break;
 		}
 
-		case 9: {
+		case 11: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -519,7 +591,7 @@ int main() {
 			break;
 		}
 
-		case 10: {
+		case 12: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -534,7 +606,7 @@ int main() {
 			break;
 		}
 
-		case 11: {
+		case 13: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -549,7 +621,7 @@ int main() {
 			break;
 		}
 
-		case 12: {
+		case 14: {
 
 			cout<<"Enter Employee's ID: ";
 			int id;
@@ -564,7 +636,7 @@ int main() {
 			break;
 		}
 
-		case 13: {
+		case 15: {
 
 			e.showEmployees();
 
@@ -577,7 +649,7 @@ int main() {
 			return 0;
 
 		default:
-			cout << "Invalid choice! Please select between 0-13.\n";
+			cout << "Invalid choice! Please select between 0-15.\n";
 			break;
 		}
 	}
