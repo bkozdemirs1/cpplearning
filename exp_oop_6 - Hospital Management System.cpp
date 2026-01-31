@@ -319,7 +319,7 @@ public:
 	void searchDoctorbyID(int id) {
 
 		if(doctors.size() == 0) {
-			cout<<"Patient not found!";
+			cout<<"Doctor not found!";
 		}
 
 		else {
