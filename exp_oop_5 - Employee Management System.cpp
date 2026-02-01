@@ -151,10 +151,10 @@ public:
 			if(employees[i].getEmployeeId() == id) {
 
 				employees[i].setPerformanceScore(score);
+				return;
 			}
 
 			cout<<"Employee's performance score has been set successfully!";
-			return;
 		}
 
 		cout<<"Employee not found!";
@@ -170,11 +170,12 @@ public:
 				    employees[i].getSalary() +
 				    (employees[i].getSalary() * employees[i].getPerformanceScore()) / 150
 				);
+				return;
 			}
 
 			cout<<employees[i].getName()<<" "<<employees[i].getLastName()<<" "<<"'s performance applied with score:"<<" "<<employees[i].getPerformanceScore();
 			cout<<"Total Salary with Bonus: "<<employees[i].getSalary()<<" "<<"TL";
-			return;
+			
 		}
 
 		cout<<"Employee not found!";
@@ -187,11 +188,10 @@ public:
 			if(employees[i].getEmployeeId() == id) {
 
 				employees[i].setEmail(newmail);
+				return;
 			}
 
 			cout<<"New e-mail has been updated!"<<" "<<employees[i].getEmail();
-			return;
-
 		}
 		cout<<"Employee not found!";
 	}
@@ -203,11 +203,10 @@ public:
 			if(employees[i].getEmployeeId() == id) {
 
 				employees[i].setPhoneNumber(newphone);
+				return;
 			}
 
 			cout<<"New phone number has been updated!"<<" "<<employees[i].getPhoneNumber();
-			return;
-
 		}
 		cout<<"Employee not found!";
 	}
@@ -219,11 +218,11 @@ public:
 			if(employees[i].getEmployeeId() == id) {
 
 				employees[i].setPosition(newposition);
+				return;
 			}
 
 			cout<<"New e-mail has been updated!"<<" "<<employees[i].getPosition();
-			return;
-
+			
 		}
 		cout<<"Employee not found!";
 	}
@@ -235,11 +234,10 @@ public:
 			if(employees[i].getEmployeeId() == id) {
 
 				employees[i].setPerformanceScore(newscore);
+				return;
 			}
 
 			cout<<"New Performance Score has been updated!"<<" "<<employees[i].getPerformanceScore();
-			return;
-
 		}
 		cout<<"Employee not found!";
 	}
@@ -251,9 +249,9 @@ public:
 			if(employees[i].getEmployeeId() == id) {
 
 				employees[i].setSalary(employees[i].getSalary() + amount);
+				return;
 			}
 			cout<<"New salary has been increased!"<<" "<<employees[i].getSalary()<<" "<<"TL";
-			return;
 		}
 		cout<<"Employee not found!";
 	}
@@ -265,9 +263,10 @@ public:
 			if(employees[i].getEmployeeId() == id) {
 
 				employees[i].setSalary(employees[i].getSalary() - amount);
+				return;
 			}
 			cout<<"New salary has been decreased!"<<" "<<employees[i].getSalary()<<" "<<"TL";
-			return;
+			
 		}
 		cout<<"Employee not found!";
 	}
@@ -292,9 +291,8 @@ public:
 					cout<<"\nPhone Number: "<<employees[i].getPhoneNumber();
 					cout<<"\nE-Mail: "<<employees[i].getEmail();
 					cout<<"\nPerformance Score: "<<employees[i].getPerformanceScore();
+					return;
 				}
-
-				return;
 			}
 		}
 	}
@@ -332,9 +330,8 @@ public:
 					cout<<"\nPhone Number: "<<employees[i].getPhoneNumber();
 					cout<<"\nE-Mail: "<<employees[i].getEmail();
 					cout<<"\nPerformance Score: "<<employees[i].getPerformanceScore();
+					return;
 				}
-
-				return;
 			}
 		}
 	}
