@@ -339,6 +339,77 @@ public:
 		}
 	}
 
+	void searchDoctorbyName(string name,string lastname) {
+
+		if(doctors.size() == 0) {
+			cout<<"Doctor not found!";
+		}
+
+		else {
+
+			for(int i = 0; i<doctors.size(); i++) {
+
+				if(doctors[i].getDoctorName() == name && doctors[i].getDoctorLastName() == lastname) {
+
+					cout<<"ID: "<<doctors[i].getDoctorID();
+					cout<<"\nName: "<<doctors[i].getDoctorName();
+					cout<<"\nLast Name: "<<doctors[i].getDoctorLastName();
+					cout<<"\nDepartment: "<<doctors[i].getDepartment();
+					return;
+				}
+
+			}
+		}
+	}
+
+	void searchPatientbyName(string name,string lastname) {
+
+		if(patients.size() == 0) {
+			cout<<"Patient not found!";
+		}
+
+		else {
+
+			for(int i = 0; i<patients.size(); i++) {
+
+				if(patients[i].getPatientName() == name && patients[i].getPatientLastName() == lastname) {
+
+					cout<<"ID: "<<patients[i].getPatientID();
+					cout<<"\nName: "<<patients[i].getPatientName();
+					cout<<"\nLast Name: "<<patients[i].getPatientLastName();
+					cout<<"\nAge: "<<patients[i].getPatientAge();
+					cout<<"\nIllness: "<<patients[i].getPatientIll();
+					return;
+				}
+
+			}
+		}
+	}
+
+	void removeDoctorbyName(string name,string lastname) {
+
+		for(int i = 0; i<doctors.size(); i++) {
+			if(doctors[i].getDoctorName() == name && doctors[i].getDoctorLastName() == lastname) {
+				doctors.erase(doctors.begin() + i);
+				cout<<"Doctor removed!\n";
+				return;
+			}
+		}
+		cout<<"Doctor not found!";
+	}
+
+	void removePatientbyName(string name,string lastname) {
+
+		for(int i = 0; i<patients.size(); i++) {
+			if(patients[i].getPatientName() == name && patients[i].getPatientLastName() == lastname) {
+				patients.erase(patients.begin() + i);
+				cout<<"Patient removed!\n";
+				return;
+			}
+		}
+		cout<<"Patient not found!";
+	}
+
 
 	void showAllPatients() {
 
@@ -435,10 +506,14 @@ int main() {
 		cout<<"\n 5 -> Show All Doctors";
 		cout<<"\n 6 -> Show Appointments by Doctor";
 		cout<<"\n 7 -> Show Appointments by Patient";
-		cout<<"\n 8 -> Remove Patient";
-		cout<<"\n 9 -> Remove Doctor";
+		cout<<"\n 8 -> Remove Patient by ID";
+		cout<<"\n 9 -> Remove Doctor by ID";
 		cout<<"\n 10 -> Search Patient by ID";
 		cout<<"\n 11 -> Search Doctor by ID";
+		cout<<"\n 12 -> Search Doctor by Name";
+		cout<<"\n 13 -> Search Patient by Name";
+		cout<<"\n 14 -> Remove Doctor by Name";
+		cout<<"\n 15 -> Remove Patient by Name";
 		cout<<"\n 0 -> Exit";
 		cout<<"\n=================================================";
 
@@ -568,20 +643,34 @@ int main() {
 		case 8: {
 
 			int p_id;
-			cout<<"Enter Patient's ID for Remove: ";
-			cin>>p_id;
+			string c;
+			cout<<"Are you sure to remove the patient? (Y/N)"<<endl;
+			cin>>c;
 
-			h.removePatientbyID(p_id);
+			if(c == "Y") {
+				cout<<"Enter Patient's ID for Remove: ";
+				cin>>p_id;
+
+				h.removePatientbyID(p_id);
+			}
+
 			break;
 		}
 
 		case 9: {
 
 			int d_id;
-			cout<<"Enter Doctor's ID for Remove: ";
-			cin>>d_id;
+			string c;
+			cout<<"Are you sure to remove the doctor? (Y/N)"<<endl;
+			cin>>c;
 
-			h.removeDoctorbyID(d_id);
+			if(c == "Y") {
+				cout<<"Enter Doctor's ID for Remove: ";
+				cin>>d_id;
+
+				h.removeDoctorbyID(d_id);
+			}
+
 			break;
 		}
 
@@ -605,9 +694,76 @@ int main() {
 			break;
 		}
 
+		case 12: {
+
+			string n,ln;
+
+			cout<<"Enter Doctor's name for Search: ";
+			cin.ignore();
+			getline(cin,n);
+
+			cout<<"Enter Lastname: ";
+			cin>>ln;
+
+			h.searchDoctorbyName(n,ln);
+			break;
+		}
+
+		case 13: {
+
+			string n,ln;
+
+			cout<<"Enter Patient's Name for Search: ";
+			cin.ignore();
+			getline(cin,n);
+
+			cout<<"Enter Lastname: ";
+			cin>>ln;
+
+			h.searchPatientbyName(n,ln);
+			break;
+		}
+
+		case 14: {
+
+			string n,ln;
+			string c;
+			cout<<"Are you sure to remove the doctor? (Y/N)"<<endl;
+			cin>>c;
+
+			if(c == "Y") {
+				cout<<"Enter Doctor's Name and Lastname for Remove: ";
+				cin>>n;
+				cin>>ln;
+
+				h.removeDoctorbyName(n,ln);
+			}
+
+			break;
+
+		}
+
+		case 15: {
+
+			string n,ln;
+			string c;
+			cout<<"Are you sure to remove the patient? (Y/N)"<<endl;
+			cin>>c;
+
+			if(c == "Y") {
+				cout<<"Enter Patient's Name and Lastname for Remove: ";
+				cin>>n;
+				cin>>ln;
+
+				h.removePatientbyName(n,ln);
+			}
+
+			break;
+		}
+
 		default: {
 
-			cout<<"Invalid Choice! Please make your choice between 0-11!";
+			cout<<"Invalid Choice! Please make your choice between 0-15!";
 			break;
 		}
 
